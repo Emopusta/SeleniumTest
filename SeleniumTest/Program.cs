@@ -5,10 +5,10 @@ using SeleniumTest.CommandTests.Images;
 
 IWebDriver driver = new ChromeDriver();
 
-// Navigate to the website
+
 driver.Navigate().GoToUrl("https://localhost:7096/swagger/index.html");
 
-// Find the search box element and enter a query
+
 IList<string> results= new List<string>();
 
 ImageTests imageTests = new ImageTests(driver);
@@ -23,6 +23,4 @@ foreach (var result in results)
 }
 
 driver.Quit();
-
-//System.Threading.Thread.Sleep(1000);
 
