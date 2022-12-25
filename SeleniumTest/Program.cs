@@ -22,19 +22,7 @@ foreach (var result in results)
     Console.WriteLine(result);
 }
 
-
+driver.Quit();
 
 //System.Threading.Thread.Sleep(1000);
-//driver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div/button")).Click();
-//System.Threading.Thread.Sleep(1000);
-//driver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[1]/div[2]/button")).Click();
-//driver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[2]/div/table/tbody/tr/td[2]/input")).SendKeys("1");
-//driver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[3]/div[2]/div/table/tbody/tr/td[2]/div/input")).SendKeys("C:\\Users\\emred\\Pictures\\asd.PNG");
-//driver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[2]/button")).Click();
-//var item = driver.FindElement(By.XPath("//*[@id=\"post_api_Images_responses\"]/tbody/tr/td[1]")).Text;
 
-
-
-// Find the search button and click it
-//IWebElement searchButton = driver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[1]/div[2]/button"));
-//searchButton.Click();
