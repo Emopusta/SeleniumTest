@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using SeleniumTest.ResultTestEntity;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,14 @@ namespace SeleniumTest.CommandTests.VehicleTests
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[2]/button")).Click();
             var statusCode = _webDriver.FindElement(By.XPath("//*[@id=\"post_api_Vehicles_responses\"]/tbody/tr/td[1]")).Text;
             var statusDescription = _webDriver.FindElement(By.XPath("//*[@id=\"post_api_Vehicles_responses\"]/tbody/tr/td[2]/div/div/p")).Text;
+
+            WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(20));
+
+            wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[3]/div[2]/div/div/table/tbody/tr/td[1]")));
+
+
+            var serverStatusCode = _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[3]/div[2]/div/div/table/tbody/tr/td[1]")).Text;
+            
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[1]/div[1]/div[2]/button")).Click();
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div/button")).Click();
 
@@ -34,7 +44,8 @@ namespace SeleniumTest.CommandTests.VehicleTests
             {
                 FunctionName = "POSTVehicleTest",
                 StatusCode = statusCode,
-                StatusDescription = statusDescription
+                StatusDescription = statusDescription,
+                ServerStatusCode = serverStatusCode
             };
             return result;
         }

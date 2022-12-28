@@ -11,6 +11,9 @@ namespace SeleniumTest.ResultTestEntity
         public string FunctionName { get; set; }
         public string StatusCode { get; set; }
         public string StatusDescription { get; set; }
+        public string ServerStatusCode { get; set; }
+
+
 
     }
 }
