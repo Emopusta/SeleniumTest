@@ -24,8 +24,11 @@ namespace SeleniumTest.CommandTests.VehicleTests
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div/button")).Click();
             System.Threading.Thread.Sleep(1000);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[1]/div[1]/div[2]/button")).Click();
+            System.Threading.Thread.Sleep(500);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[1]/div[2]/div/table/tbody/tr/td[2]/input")).Clear();
+            System.Threading.Thread.Sleep(500);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[1]/div[2]/div/table/tbody/tr/td[2]/input")).SendKeys(name);
+            System.Threading.Thread.Sleep(500);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Vehicles-post_api_Vehicles\"]/div[2]/div/div[2]/button")).Click();
             var statusCode = _webDriver.FindElement(By.XPath("//*[@id=\"post_api_Vehicles_responses\"]/tbody/tr/td[1]")).Text;
             var statusDescription = _webDriver.FindElement(By.XPath("//*[@id=\"post_api_Vehicles_responses\"]/tbody/tr/td[2]/div/div/p")).Text;
