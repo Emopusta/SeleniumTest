@@ -9,6 +9,9 @@ namespace SeleniumTest.CommandTests.VehicleTests
 {
     public interface VehicleTestService
     {
-        ResultTest POSTVehicleTest(string name);
+        ResultTest POSTAddVehicleTest(string name);
+        ResultTest PUTUpdateVehicleTest(string name, int velocity, int batteryPercentage, int statusId);
+
+
     }
 }

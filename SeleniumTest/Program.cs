@@ -17,17 +17,20 @@ ImageTestService imageTests = new ImageTestManager(driver);
 VehicleTestService vehicleTests = new VehicleTestManager(driver);
 
 
-results.Add(vehicleTests.POSTVehicleTest("test"));
-results.Add(imageTests.POSTImageTest(1, "C:\\Users\\emred\\Pictures\\asd.PNG"));
-results.Add(imageTests.POSTImageTest(1, "C:\\Users\\emred\\Pictures\\asd.PNG"));
-results.Add(imageTests.POSTImageTest(4, "C:\\Users\\emred\\Pictures\\asd.PNG"));
+results.Add(vehicleTests.POSTAddVehicleTest("test"));
+results.Add(imageTests.POSTAddImageTest(1, "C:\\Users\\emred\\Pictures\\asd.PNG"));
+results.Add(imageTests.POSTAddImageTest(1, "C:\\Users\\emred\\Pictures\\asd.PNG"));
+results.Add(imageTests.POSTAddImageTest(1, "C:\\Users\\emred\\Pictures\\asd.PNG"));
+results.Add(vehicleTests.PUTUpdateVehicleTest("test", 10,15,1));
+results.Add(vehicleTests.PUTUpdateVehicleTest("test", 20, 10, 1));
 
 
-
+var counter = 0;
 Console.WriteLine("-----------------------------");
 foreach (var result in results)
 {
-    
+    Console.WriteLine(counter);
+    counter++;
     Console.WriteLine("Function Name: " + result.FunctionName);
     if (result.ServerStatusCode.Contains("500"))
     {

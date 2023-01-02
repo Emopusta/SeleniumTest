@@ -9,7 +9,7 @@ namespace SeleniumTest.CommandTests.ImageTests
 {
     public interface ImageTestService
     {
-        ResultTest POSTImageTest(int id, string filePath);
+        ResultTest POSTAddImageTest(int vehicleId, string filePath);
 
     }
 }

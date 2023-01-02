@@ -17,7 +17,7 @@ namespace SeleniumTest.CommandTests.ImageTests
         }
 
 
-        public ResultTest POSTImageTest(int id, string filePath)
+        public ResultTest POSTAddImageTest(int vehicleId, string filePath)
         {
             System.Threading.Thread.Sleep(1000);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div/button")).Click();
@@ -26,7 +26,7 @@ namespace SeleniumTest.CommandTests.ImageTests
             System.Threading.Thread.Sleep(500);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[2]/div/table/tbody/tr/td[2]/input")).Clear();
             System.Threading.Thread.Sleep(500);
-            _webDriver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[2]/div/table/tbody/tr/td[2]/input")).SendKeys(id.ToString());
+            _webDriver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[2]/div/table/tbody/tr/td[2]/input")).SendKeys(vehicleId.ToString());
             System.Threading.Thread.Sleep(500);
             _webDriver.FindElement(By.XPath("//*[@id=\"operations-Images-post_api_Images\"]/div[2]/div/div[1]/div[3]/div[2]/div/table/tbody/tr/td[2]/div/input")).SendKeys(filePath);
             System.Threading.Thread.Sleep(500);
@@ -46,7 +46,7 @@ namespace SeleniumTest.CommandTests.ImageTests
             
             ResultTest result = new()
             {
-                FunctionName = "POSTImageTest",
+                FunctionName = "POSTAddImageTest",
                 StatusCode = statusCode,
                 StatusDescription = statusDescription,
                 ServerStatusCode= serverStatusCode
